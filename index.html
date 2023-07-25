@@ -30,6 +30,8 @@
 
 <body>
 
+    <header></header>
+
     <div id="app">
         <main class="container">
             <div id="main-container">
@@ -73,7 +75,7 @@
                                 <div class="time-container"><small>12.00</small></div>
                             </div>
 
-                             <!-- Avatar 2  -->
+                            <!-- Avatar 2  -->
                             <div class="my-avatar gap-2 py-3 px-3">
                                 <div class="avatar-pic">
                                     <img src="img/avatar_2.jpg" alt="">
@@ -171,6 +173,20 @@
                             <div class="btn btn-link"><i class="fas fa-ellipsis-vertical"></i></div>
                         </div>
                     </nav>
+
+                    <div id="messages-container">
+                        <div class="single-message-wrapper">
+                            <div class="message-baloon sent">Messaggio Inviato</div>
+                        </div>
+                        <div class="single-message-wrapper">
+                            <div class="message-baloon received">Messaggio Ricevuto</div>
+                        </div>
+                    </div>
+                    <div id="chat-down-bar">
+                        <button class="btn btn-link"><i class="fas fa-smile"></i></button>
+                        <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+                        <button class="btn btn-link"><i class="fas fa-microphone"></i></button>
+                    </div>
                 </div>
             </div>
         </main>

@@ -6,12 +6,22 @@ body {
     padding-bottom: 1.5rem;
 }
 
+header {
+    width: 100%;
+    height: 150px;
+    background-color: #039588;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 main {
     height: 100%;
 }
 
 #app {
     height: 100%;
+    position: relative;
 }
 
 #main-container {
@@ -34,6 +44,7 @@ main {
     padding: .5rem 1rem;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     justify-content: space-between;
 }
 
@@ -90,6 +101,8 @@ main {
 #main-content {
     flex-grow: 1;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .last-access {
@@ -115,4 +128,47 @@ main {
 
 .single-contact .my-avatar:hover {
     background-color: #E9EBEB;
+}
+
+#messages-container {
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+}
+
+#chat-down-bar {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1rem;
+    padding: .5rem 1rem;
+    background-color: #F3EEEA;
+}
+
+#chat-down-bar input {
+    flex-grow: 1;
+}
+
+#chat-down-bar i {
+    color: grey;
+}
+
+.single-message-wrapper {
+    display: flex;
+    padding: .5rem 1.5rem ;
+}
+
+.message-baloon {
+    border-radius: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.message-baloon.sent {
+    background-color: #D5F9BA;
+    margin-left: auto;
+}
+
+.message-baloon.received {
+    background-color: white;
 }
