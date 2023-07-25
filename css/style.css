@@ -1,0 +1,73 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #DADBD3;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+main {
+    height: 100%;
+}
+
+#app {
+    height: 100%;
+}
+
+#main-container {
+    display: flex;
+    background-color: white;
+    height: 100%;
+}
+
+#sidebar {
+    height: 100%;
+    width: 400px;
+    flex-shrink: 0;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-top-bar, .right-top-bar {
+    background-color: #EAEAEA;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contacts-list {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.my-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-pic {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 60px;
+}
+
+.avatar-pic img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.icons-container i {
+    color: #B1B1B1;
+}
+
+#main-content {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.last-access {
+    color: #B1B1B1;
+}
