@@ -104,3 +104,15 @@ main {
 .btn-light {
     --bs-btn-bg: white;
 }
+
+.time-container{
+    margin: auto;
+}
+
+.single-contact .my-avatar {
+    transition: background-color 0.3s ease;
+}
+
+.single-contact .my-avatar:hover {
+    background-color: #E9EBEB;
+}
