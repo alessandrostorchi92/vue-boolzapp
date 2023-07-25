@@ -37,6 +37,31 @@ main {
     justify-content: space-between;
 }
 
+.banner {
+    display: flex;
+    gap: 1rem;
+    background-color: #8EDAFC;
+    padding: 1rem 1.5rem;
+}
+
+.banner i {
+    background-color: white;
+    color:#8EDAFC;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    padding: 1.5rem;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.banner a {
+    color: white;
+}
+
 .contacts-list {
     flex-grow: 1;
     overflow: auto;
@@ -58,9 +83,8 @@ main {
     width: 100%;
 }
 
-
 .icons-container i {
-    color: #B1B1B1;
+    color: grey;
 }
 
 #main-content {
@@ -69,5 +93,14 @@ main {
 }
 
 .last-access {
-    color: #B1B1B1;
+    color: grey;
+}
+
+.search-bar {
+    padding: .5rem;
+    background-color: #EAEAEA;
+}
+
+.btn-light {
+    --bs-btn-bg: white;
 }
