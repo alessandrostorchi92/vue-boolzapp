@@ -35,10 +35,22 @@
 // 2) Per fare ciò utilizzo l'oggetto dell'utente cliccato e lo salvo in una variabile (currentContact) che inserisco nel return della funzione data()
 // 3) Utilizzo la proprietà (currentContact) per modificare dinamicamente il contenuto della right-top-bar in base al click sulla lista dei contatti
 
+// - Milestone 3:
+// 1) Per poter aggiungere un messaggio nella chat-down-bar e poter leggere l'input dell'utente ho bisogno della direttiva v-model
+// 2) V-model a sua volta per funzionare deve essere associato ad una variabile
+// 3) Questa variabile la collego tramite v-model all'input della  chat-down-bar
+// 4) Per ascoltare l'evento uso @keyup.enter
+// 5) Leggo il testo che l'utente ha scritto con console.log per accertarmi che tutto funzioni
+// 6) Il nuovo messaggio lo pusho nell'array currentContact.messages
+
+
+
+
 Vue.createApp({
     data() {
         return {
             currentContact: null,
+            newMessageText: "",
             contactsList: [
                 {
                     name: 'Michele',
@@ -208,7 +220,27 @@ Vue.createApp({
     methods: {
         onUserClick(singleContact) {
             this.currentContact = singleContact
-        }
+        },
+
+        sendMessageText() {
+
+            // Leggo il testo che l'utente ha scritto
+            console.log(this.newMessageText);
+
+            // Rappresenta l'oggetto che identifica l'utente attivo, che si attiva al click sulla lista dei contatti 
+            this.currentContact
+
+            // Array dei messaggi della chat dell'utente attualmente attivo
+            this.currentContact.messages
+
+            // Per aggiungere il nuovo messaggio uso .push
+            this.currentContact.messages.push({
+                date: new Date().toLocaleDateString() + "" + new Date().toLocaleTimeString(),
+                message: this.newMessageText,
+                status: "sent",
+            })
+
+        },
     },
     beforeMount() {
         this.currentContact = this.contactsList[0]

@@ -116,17 +116,19 @@
                     <!-- Contenitore messaggi dei contatti -->
                     <div id="messages-container">
                         <div class="single-message-wrapper"
-                        v-for="singleMessage in currentContact.messages">
+                        v-for="messageItem in currentContact.messages">
                             <div class="message-baloon" 
-                            v-bind:class="[singleMessage.status === 'sent' ? 'sent' : 'received']">
-                            {{ singleMessage.message }}</div>
+                            v-bind:class="messageItem.status">
+                            {{ messageItem.message }}</div>
                         </div>
                     </div>
 
                     <!-- Barra per scrivere un messaggio -->
                     <div id="chat-down-bar">
                         <button class="btn btn-link"><i class="fas fa-smile"></i></button>
-                        <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+                        <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio"
+                        v-model="newMessageText"
+                        @keyup.enter="sendMessageText">
                         <button class="btn btn-link"><i class="fas fa-microphone"></i></button>
                     </div>
                 </div>
