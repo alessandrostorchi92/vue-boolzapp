@@ -35,7 +35,12 @@
     <div id="app">
         <main class="container">
             <div id="main-container">
+
+                <!-- Sezione di sinistra -->
+                
                 <div id="sidebar">
+
+                    <!-- Barra in alto a sinistra  -->
                     <nav class="left-top-bar">
                         <div class="my-avatar gap-1">
                             <div class="avatar-pic">
@@ -49,23 +54,28 @@
                             <div class="btn btn-link"><i class="fas fa-ellipsis-vertical"></i></div>
                         </div>
                     </nav>
+
+                    <!-- Banner azzurro  -->
                     <div class="banner">
                         <i class=" fas fa-bell-slash"></i>
                         <div><small>Ricevi notifiche di nuovi messaggi</small>
                             <a class="d-block" href="#"><small>Attiva notifiche desktop</small></a>
                         </div>
                     </div>
+
+                    <!-- Barra di ricerca della lista contatti  -->
                     <div class="search-bar">
                         <div class="input-group">
                             <button class="btn btn-light"><i class="fas fa-search"></i></button>
                             <input type="text" class="form-control border-0" placeholder="Cerca o inizia un nuova chat">
                         </div>
                     </div>
+
+                    <!-- Lista dei contatti  -->
                     <div class="contacts-list">
                         <div class="single-contact" v-for="contact in contactsList"
                         @click="onUserClick(contact)">
 
-                            <!-- Avatar 1  -->
                             <div class="my-avatar gap-2 py-3 px-3">
                                 <div class="avatar-pic">
                                     <img v-bind:src="`img/avatar${contact.avatar}.jpg`" alt="">
@@ -78,7 +88,13 @@
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Sezione di destra -->
+
                 <div id="main-content">
+
+                     <!-- Barra in alto a destra -->
                     <nav class="right-top-bar">
                         <div class="my-avatar gap-1">
                             <div class="avatar-pic">
@@ -97,14 +113,17 @@
                         </div>
                     </nav>
 
+                    <!-- Contenitore messaggi dei contatti -->
                     <div id="messages-container">
-                        <div class="single-message-wrapper">
-                            <div class="message-baloon sent">Messaggio Inviato</div>
-                        </div>
-                        <div class="single-message-wrapper">
-                            <div class="message-baloon received">Messaggio Ricevuto</div>
+                        <div class="single-message-wrapper"
+                        v-for="singleMessage in currentContact.messages">
+                            <div class="message-baloon" 
+                            v-bind:class="[singleMessage.status === 'sent' ? 'sent' : 'received']">
+                            {{ singleMessage.message }}</div>
                         </div>
                     </div>
+
+                    <!-- Barra per scrivere un messaggio -->
                     <div id="chat-down-bar">
                         <button class="btn btn-link"><i class="fas fa-smile"></i></button>
                         <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">

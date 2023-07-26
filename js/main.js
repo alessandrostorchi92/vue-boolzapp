@@ -33,6 +33,7 @@
 // - Milestone 2:
 // 1) Una volta stampata la lista degli utenti, al click su un utente devo mostrare il suo avatar sulla barra in alto e i suoi messaggi sulla schermata di destra
 // 2) Per fare ciò utilizzo l'oggetto dell'utente cliccato e lo salvo in una variabile (currentContact) che inserisco nel return della funzione data()
+// 3) Utilizzo la proprietà (currentContact) per modificare dinamicamente il contenuto della right-top-bar in base al click sulla lista dei contatti
 
 Vue.createApp({
     data() {
