@@ -82,7 +82,7 @@
                     <nav class="right-top-bar">
                         <div class="my-avatar gap-1">
                             <div class="avatar-pic">
-                                <img src="img/avatar${currentContact.avatar}.jpg" alt="">
+                                <img v-bind:src="`img/avatar${currentContact.avatar}.jpg`" alt="">
                             </div>
                             <div class="avatar-specs">{{ currentContact.name }}
                                 <div>
