@@ -133,6 +133,7 @@ main {
 #messages-container {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
+    overflow: auto;
 }
 
 #chat-down-bar {
