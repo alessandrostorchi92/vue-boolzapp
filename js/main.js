@@ -42,7 +42,8 @@
 // 4) Per ascoltare l'evento uso @keyup.enter
 // 5) Leggo il testo che l'utente ha scritto con console.log per accertarmi che tutto funzioni
 // 6) Il nuovo messaggio lo pusho nell'array currentContact.messages
-
+// 7) Resetto il messaggio scritto nella chat bar dopo aver premuto invio.
+// 7) Il messaggio di risposta "okay" lo pusho nell'array currentContact.messages e con setTimeOut stabilisco che il tempo di risposta deve essere pari ad un secondo
 
 
 
@@ -242,12 +243,24 @@ Vue.createApp({
 
              // reset del campo di input dopo il push
              this.newMessageText = "";
+
+              // do un tempo per la risposta e invoco la funzione receivedMessage
+            setTimeout(this.receivedMessage, 1000);
             
             // Per accedere ad un elemento html tramite Vue posso usare this.$refs dopo aver aggiunto l'attributo ref all'elemento html. Appena Vue finisce di aggiornare l'html, eseguo subito il codice sottostante mediante questo metodo nativo di Vuejs
 
             this.$nextTick(() => {
                 this.$refs.msgContainer.scrollTop = this.$refs.msgContainer.scrollHeight;
             });
+        },
+
+        receivedMessage() {
+            this.currentContact.messages.push({
+                date: new Date().toLocaleDateString() + "" + new Date().toLocaleTimeString(),
+                message: "okay",
+                status: "received",
+            });
+
         },
     },
     beforeMount() {
