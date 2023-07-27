@@ -58,7 +58,7 @@ Vue.createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '202/01/10 15:30:55',
+                            date: '2020/01/10 15:30:55',
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent'
                         },
@@ -80,7 +80,7 @@ Vue.createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '20-03-2020T16:30:00',
+                            date: '20-03-2020 16:30:00',
                             message: 'Ciao come stai?',
                             status: 'sent'
                         },
@@ -222,12 +222,11 @@ Vue.createApp({
             this.currentContact = singleContact
         },
 
-        sendMessageText() {
+        sentMessageText() {
 
             // Leggo il testo che l'utente ha scritto
             console.log(this.newMessageText);
 
-            
             // Rappresenta l'oggetto che identifica l'utente attivo, che si attiva al click sulla lista dei contatti 
             this.currentContact
             
@@ -240,6 +239,9 @@ Vue.createApp({
                 message: this.newMessageText,
                 status: "sent",
             })
+
+             // reset del campo di input dopo il push
+             this.newMessageText = "";
             
             // Per accedere ad un elemento html tramite Vue posso usare this.$refs dopo aver aggiunto l'attributo ref all'elemento html. Appena Vue finisce di aggiornare l'html, eseguo subito il codice sottostante mediante questo metodo nativo di Vuejs
 
