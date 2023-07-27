@@ -261,6 +261,10 @@ Vue.createApp({
                 status: "received",
             });
 
+            this.$nextTick(() => {
+                this.$refs.msgContainer.scrollTop = this.$refs.msgContainer.scrollHeight;
+            });
+
         },
     },
     beforeMount() {
