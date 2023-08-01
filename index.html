@@ -67,13 +67,13 @@
                     <div class="search-bar">
                         <div class="input-group">
                             <button class="btn btn-light"><i class="fas fa-search"></i></button>
-                            <input type="text" class="form-control border-0" placeholder="Cerca o inizia un nuova chat">
+                            <input type="text" class="form-control border-0" placeholder="Cerca o inizia un nuova chat" v-model="searchUser">
                         </div>
                     </div>
 
                     <!-- Lista dei contatti  -->
                     <div class="contacts-list">
-                        <div class="single-contact" v-for="contact in contactsList"
+                        <div class="single-contact" v-for="contact in getFilteredContacts()"
                         @click="onUserClick(contact)">
 
                             <div class="my-avatar gap-2 py-3 px-3">

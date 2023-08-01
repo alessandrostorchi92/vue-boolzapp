@@ -42,8 +42,13 @@
 // 4) Per ascoltare l'evento uso @keyup.enter
 // 5) Leggo il testo che l'utente ha scritto con console.log per accertarmi che tutto funzioni
 // 6) Il nuovo messaggio lo pusho nell'array currentContact.messages
-// 7) Resetto il messaggio scritto nella chat bar dopo aver premuto invio.
+// 7) Resetto il messaggio scritto nella chat bar dopo aver premuto invio
 // 7) Il messaggio di risposta "okay" lo pusho nell'array currentContact.messages e con setTimeOut stabilisco che il tempo di risposta deve essere pari ad un secondo
+
+// - Milestone 4:
+// 1) Imposto la direttiva v-model e aggiungo una variabile collegata nel Data()
+// 2) Ho bisogno di un array con all'interno la lista degli utenti da mostrare per stampare la lista dei contatti filtrati
+// 3) Creo una funzione che filtri i contatti
 
 
 
@@ -52,6 +57,7 @@ Vue.createApp({
         return {
             currentContact: null,
             newMessageText: "",
+            searchUser: "",
             contactsList: [
                 {
                     name: 'Michele',
@@ -265,6 +271,11 @@ Vue.createApp({
                 this.$refs.msgContainer.scrollTop = this.$refs.msgContainer.scrollHeight;
             });
 
+        },
+
+        getFilteredContacts() {
+            const filteredList = [];
+            return this.contactsList.filter((contact) => contact.name.toLowerCase().includes(this.searchUser.toLowerCase()));
         },
     },
     beforeMount() {
