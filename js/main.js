@@ -49,6 +49,7 @@
 // 1) Imposto la direttiva v-model e aggiungo una variabile collegata nel Data()
 // 2) Ho bisogno di un array con all'interno la lista degli utenti da mostrare per stampare la lista dei contatti filtrati
 // 3) Creo una funzione che filtri i contatti
+// 4) Aggiungo questa funzione al v-for sostituendola con la lista statica precedente (contactList) 
 
 
 
